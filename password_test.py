@@ -1,7 +1,7 @@
-import unittest # Importing the unittest module
-from password import Password # Importing the contact class
+import unittest 
+from password import Password 
 
-class TestContact(unittest.TestCase):
+class TestPassword(unittest.TestCase):
 
     '''
     Test class that defines test cases for the password class behaviours.
