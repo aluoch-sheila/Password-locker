@@ -10,3 +10,12 @@ class Password:
         self.last_name = last_name
         self.password = password
         self.email = email
+password_list = [] 
+
+    def save_password(self):
+
+        '''
+        save_password method saves password objects into password_list
+        '''
+
+        Password.password_list.append(self)        
