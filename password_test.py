@@ -29,4 +29,15 @@ class TestPassword(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()    
+    unittest.main()
+    
+    def test_save_password(self):
+        '''
+        test_save_password test case to test if the contact object is saved into
+         the password list
+        '''
+        self.new_password.save_pasword() 
+        self.assertEqual(len(Password.password_list),1)
+
+if __name__ ==  '__main__':
+    unittest.main()        
