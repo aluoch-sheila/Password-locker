@@ -34,40 +34,38 @@ class TestPassword(unittest.TestCase):
         self.new_password.save_password()
         self.assertEqual(len(Password.password_list),1)
 
+    def tearDown(self):
+        """
+        tearDown method that cleans up after each test has run
+        """
+
+        Password.password_list = []
+
+    def test_save_multiple_password(self):
+        '''
+        test_save_multiple_password to check if we can save multiple password
+        objects to our password_list
+        '''
+        self.new_password.save_password()
+        test_password = Password("Test","user","password","email") 
+        test_password.save_password()
+        self.assertEqual(len(Password.password_list),2)
+
+
+    def test_delete_password(self):
+            '''
+            test_delete_password to test if we can remove a password from our password list
+            '''
+            self.new_password.save_password()
+            test_password = Password("Test","user","password","test@user.com")
+            test_password.save_passwordt()
+
+            self.new_password.delete_password()
+            self.assertEqual(len(Password.password_list),1)        
+
+        
+
 if __name__ == '__main__':
     unittest.main()
 
-def test_save_multiple_password(self):
-            '''
-            test_save_multiple_password to check if we can save multiple password
-            objects to our password_list
-            '''
-            self.new_password.save_password()
-            test_password = password("Test","user","password","test@user.com") 
-            test_password.save_password()
-            self.assertEqual(len(Password.password_list),2)
-
-if __name__ == '__main__':
-    unittest.main() 
-
-    def tearDown(self):
-            '''
-            tearDown method that does clean up after each test case has run.
-            '''
-            Password.password_list = []
-
-def test_save_multiple_password(self):
-            '''
-            test_save_multiple_password to check if we can save multiple password
-            objects to our password_list
-            '''
-            self.new_password.save_password()
-            test_password = Password("Test","user","password","test@user.com") 
-            test_password.save_password()
-            self.assertEqual(len(Password.password_list),2)
-
-if __name__ == '__main__':
-    unittest.main()      
-
- 
       
