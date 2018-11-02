@@ -53,17 +53,29 @@ class TestPassword(unittest.TestCase):
 
 
     def test_delete_password(self):
-            '''
-            test_delete_password to test if we can remove a password from our password list
-            '''
-            self.new_password.save_password()
-            test_password = Password("Test","user","password","test@user.com")
-            test_password.save_passwordt()
+        '''
+        test_delete_password to test if we can remove a password from our password list
+        '''
+        self.new_password.save_password()
+        test_password = Password("Test","user","password","email")
+        test_password.save_password()
 
-            self.new_password.delete_password()
-            self.assertEqual(len(Password.password_list),1)        
+        self.new_password.delete_password()
+        self.assertEqual(len(Password.password_list),1) 
 
-        
+    def test_find_password_by_number(self):
+        '''
+        test to check if we can find a password by phone number and display information
+        '''
+
+        self.new_password.save_password()
+        test_password = password("Test","user","0711223344","test@user.com")
+        test_password.save_password()
+
+        found_password = Password.find_by_password("password")
+
+        self.assertEqual(found_password.email,test_password.email)   
+      
 
 if __name__ == '__main__':
     unittest.main()

@@ -16,3 +16,14 @@ class Password:
 		save_password method saves password objects into password_list
 		"""
 		Password.password_list.append(self)
+
+	    # def test_delete_password(self):
+
+	def delete_password(self):
+		'''
+		delete_password method deletes a saved password from the password_list
+		'''
+
+		Password.password_list.remove(self) 	
+
+       
