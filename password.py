@@ -40,4 +40,17 @@ class Password:
 				if password.email == email:
 					return password			
 				
-		
+		@classmethod
+		def password_exist(cls,number):
+			'''
+			Method that checks if a password exists from the password list.
+			Args:
+				number: Phone number to search if it exists
+			Returns :
+				Boolean: True or false depending if the password exists
+			'''
+			for password in cls.password_list:
+				if password.password == string:
+						return True
+
+			return False		
