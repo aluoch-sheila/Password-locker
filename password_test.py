@@ -1,5 +1,5 @@
 import unittest 
-from password import Password 
+from password import Password
 
 class TestPassword(unittest.TestCase):
     '''
@@ -49,7 +49,8 @@ class TestPassword(unittest.TestCase):
         self.new_password.save_password()
         test_password = Password("Test","user","password","email") 
         test_password.save_password()
-        self.assertEqual(len(Password.password_list),2)
+    @classmethod      
+    self.assertEqual(len(Password.password_list),2)
 
 
     def test_delete_password(self):
@@ -62,19 +63,32 @@ class TestPassword(unittest.TestCase):
 
         self.new_password.delete_password()
         self.assertEqual(len(Password.password_list),1) 
-
-    def test_find_password_by_number(self):
+    # @classmethod
+    def test_find_password_by_email(self):
         '''
         test to check if we can find a password by phone number and display information
         '''
 
         self.new_password.save_password()
-        test_password = password("Test","user","0711223344","test@user.com")
+        test_password = Password("Test","user","password","email")
         test_password.save_password()
 
-        found_password = Password.find_by_password("password")
+        found_password = Password.find_by_email("email")
 
-        self.assertEqual(found_password.email,test_password.email)   
+        self.assertEqual(found_password.email,test_password.email)
+
+    def test_password_exists(self):
+            '''
+            test to check if we can return a Boolean  if we cannot find the password.
+            '''
+
+            self.new_password.save_password()
+            test_password = Password("Test","user","password","test@user.com") 
+            test_password.save_password()
+
+            password_exists = Password.password_exist("password")
+
+            self.assertTrue(password_exists)        
       
 
 if __name__ == '__main__':

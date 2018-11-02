@@ -24,6 +24,20 @@ class Password:
 		delete_password method deletes a saved password from the password_list
 		'''
 
-		Password.password_list.remove(self) 	
+		Password.password_list.remove(self) 
+	@classmethod
+	def find_by_email(cls,email):
+			'''
+			Method that takes in a string and returns a password that matches that string.
 
-       
+			Args:
+				password: password to search for
+			Returns :
+				Password of person that matches the sting.
+			'''
+
+			for password in cls.password_list:
+				if password.email == email:
+					return password			
+				
+		
