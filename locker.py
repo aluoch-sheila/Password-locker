@@ -54,10 +54,10 @@ def main():
        short_code = input().lower()
 
        if short_code == 'cc':
-           print("")
+           print("New Account")
            print("-"*10)
 
-           print ("First name ....")
+           print ("Sir Name ....")
            f_name = input()
 
            print("Last name ...")

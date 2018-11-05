@@ -63,10 +63,10 @@ class TestPassword(unittest.TestCase):
 
         self.new_password.delete_password()
         self.assertEqual(len(Password.password_list),1) 
-    # @classmethod
+  
     def test_find_password_by_email(self):
         '''
-        test to check if we can find a password by phone number and display information
+        test to check if we can find a password by account name and display information
         '''
 
         self.new_password.save_password()
@@ -101,10 +101,7 @@ class TestPassword(unittest.TestCase):
        Test to confirm that we are copying the email address from a found contact
        '''
 
-    #    self.new_password.save_password()
-    #    Password.copy_email("email")
-
-    #    self.assertEqual(self.new_password.email,pyperclip.paste())                   
+                 
         
 
 if __name__ == '__main__':
