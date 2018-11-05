@@ -44,7 +44,7 @@ def main():
    print("Hello . What is your name?")
    user_name = input()
 
-   print(f"Hi {user_name}. Wish like doing anything?")
+   print(f"Hi {user_name}. Do you want to proceed?")
 
    print('\n')
 
@@ -54,7 +54,7 @@ def main():
        short_code = input().lower()
 
        if short_code == 'cc':
-           print("New Account")
+           print("")
            print("-"*10)
 
            print ("First name ....")
@@ -78,7 +78,7 @@ def main():
        elif short_code == 'dc':
 
            if display_password():
-               print("Here is a list of all your Account details")
+               print("Here are your account details")
                print('\n')
 
                for password in display_password():
@@ -87,7 +87,7 @@ def main():
                print('\n')
            else:
                print('\n')
-               print("You dont seem to have any details in your account saved yet")
+               print("Your account is empty")
                print('\n')
 
        elif short_code == 'fc':
@@ -100,10 +100,10 @@ def main():
                rint(f"{search_password.first_name} {search_password.last_name} {search_password.email} {search_password.password}")
                print('-' * 20)
 
-               print(f"Phone number.......{search_password.email}")
-               print(f"Email address.......{search_password.email}")
+               print(f"Password.......{search_password.email}")
+               print(f"Email.....{search_password.email}")
            else:
-               print("That details does not exist")
+               print("That Account does not exist")
 
        elif short_code == "ex":
            print("Thanks for your time .......")
