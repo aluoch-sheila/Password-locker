@@ -49,8 +49,8 @@ class TestPassword(unittest.TestCase):
         self.new_password.save_password()
         test_password = Password("Test","user","password","email") 
         test_password.save_password()
-    @classmethod      
-    self.assertEqual(len(Password.password_list),2)
+        # @classmethod      
+        self.assertEqual(len(Password.password_list),2)
 
 
     def test_delete_password(self):
@@ -83,13 +83,29 @@ class TestPassword(unittest.TestCase):
             '''
 
             self.new_password.save_password()
-            test_password = Password("Test","user","password","test@user.com") 
+            test_password = Password("Test","user","password","email") 
             test_password.save_password()
 
             password_exists = Password.password_exist("password")
 
-            self.assertTrue(password_exists)        
-      
+            self.assertTrue(password_exists)
+    def test_display_all_passwords(self):
+            '''
+            method that returns a list of all passwords saved
+            '''
+
+            self.assertEqual(Password.display_passwords(),Password.password_list) 
+
+    def test_copy_email(self):
+       '''
+       Test to confirm that we are copying the email address from a found contact
+       '''
+
+    #    self.new_password.save_password()
+    #    Password.copy_email("email")
+
+    #    self.assertEqual(self.new_password.email,pyperclip.paste())                   
+        
 
 if __name__ == '__main__':
     unittest.main()

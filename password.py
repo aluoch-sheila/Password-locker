@@ -40,17 +40,29 @@ class Password:
 				if password.email == email:
 					return password			
 				
-		@classmethod
-		def password_exist(cls,number):
+		
+	@classmethod
+	def password_exist(cls,email):
 			'''
 			Method that checks if a password exists from the password list.
 			Args:
-				number: Phone number to search if it exists
+				password: password to search if it exists
 			Returns :
 				Boolean: True or false depending if the password exists
 			'''
 			for password in cls.password_list:
-				if password.password == string:
+				if password.password == email:
 						return True
 
-			return False		
+			return False
+	@classmethod
+	def display_passwords(cls):
+			'''
+			method that returns the password list
+			'''
+			return cls.password_list
+
+	# @classmethod
+    # def copy_email(cls,email):
+	# 		password_found = Password.find_by_email(email)
+	# 		pyperclip.copy(password_found.email)					
